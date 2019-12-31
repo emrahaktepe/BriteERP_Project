@@ -9,3 +9,4 @@ Feature:  Login
     Then user enter valid username and password
     Then user clicks lohin button
     Then user should see the
+    Then user closes the browser
