@@ -6,8 +6,12 @@ Feature:  Login
   Scenario:
     Given user is on main page
     Then user clicks on login button
-    Then user enter valid username and password
-    Then user clicks lohin button
-    Then user should see the
-    Then user closes the browser
-    Then user accepts
+    Then user enter valid "<username>" and "<password>"
+      | username                    | password         |
+      | eventscrmmanager41@info.com | eventscrmmanager |
+      | posmanager54@info.com       | posmanager       |
+
+
+    Then user clicks login button
+    Then the page subtitle should be "<#Inbox - Odoo>"
+
