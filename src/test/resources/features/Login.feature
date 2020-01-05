@@ -10,4 +10,4 @@ Feature:  Login
     Then user clicks lohin button
     Then user should see the
     Then user closes the browser
-    Then user accepts
+    Then user accepts dinara
