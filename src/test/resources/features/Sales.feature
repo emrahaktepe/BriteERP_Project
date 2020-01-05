@@ -11,4 +11,4 @@ Feature: Notes
     Then user select "company" and "Address Type"
     And user adds new Customer information:
       | Name          | Street      | City            | Job Position| Phone  |Mobile| Email     |
-      | sanem         | 41 oak st   | Richardson      |Manager      | 11111  |22222 |ggg@hh.com |
+      | Sanem         | 41 oak st   | Richardson      |Manager      | 11111  |22222 |ggg@hh.com |
