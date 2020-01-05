@@ -5,7 +5,7 @@ Feature: CRM feature
     Given user is on main page
     Then user clicks on login button
     Then user enter valid username and password
-    Then user clicks lohin button
+    Then user clicks login button
     Then user navigates to "Notes"
 
   @CRM
