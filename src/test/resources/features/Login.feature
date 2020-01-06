@@ -5,9 +5,6 @@ Feature:  Login
 
   Scenario:
     Given user is on main page
-    Then user clicks on login button
-    Then user enter valid username and password
-    Then user clicks lohin button
-    Then user should see the
-    Then user closes the browser
-    Then user accepts
+    Then user clicks on sign in button
+    Then user enters valid username and password and login
+    Then page title should be "Odoo"
