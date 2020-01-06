@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class MainPage {
 
-    @FindBy(xpath = "//head//title")
-    public WebElement mainPageTitle;
+
+    @FindBy(xpath = "//head/title")
+    public WebElement pageTitle;
 }

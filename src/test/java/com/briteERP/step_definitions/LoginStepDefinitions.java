@@ -1,41 +1,38 @@
 package com.briteERP.step_definitions;
 
+import com.briteERP.pages.LoginPage;
+import com.briteERP.utilities.ConfigurationReader;
+import com.briteERP.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 
 public class LoginStepDefinitions {
+    LoginPage loginPage;
+
     @Given("user is on main page")
     public void user_is_on_main_page() {
+        Driver.get().get(ConfigurationReader.getProperty("url"));
+    }
+
+    @Then("user clicks on sign in button")
+    public void user_clicks_on_sign_in_button() {
+        loginPage = new LoginPage();
+        loginPage.signInButton.click();
+    }
+
+    @Then("user enters valid username and password and login")
+    public void user_enters_valid_and() {
+        loginPage = new LoginPage();
+        loginPage.logInMethod();
 
     }
 
-    @Then("user clicks on login button")
-    public void user_clicks_on_login_button() {
-    }
 
-    @Then("user enter valid {string} and {string}")
-    public void user_enter_valid_and(String string, String string2, io.cucumber.datatable.DataTable dataTable) {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
-        // For other transformations you can register a DataTableType.
-        throw new cucumber.api.PendingException();
-    }
+    @Then("page title should be {string}")
+    public void page_title_should_be(String string) {
+        Assert.assertEquals(string, Driver.get().getTitle());
 
-    @Then("user clicks login button")
-    public void user_clicks_login_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
     }
-
-    @Then("the page subtitle should be {string}")
-    public void the_page_subtitle_should_be(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
-    }
-
 
 }
