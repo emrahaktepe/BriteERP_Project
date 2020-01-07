@@ -10,3 +10,5 @@
     Scenario: Create event
       Then user click on "Create" button
       Then user adds new event information:
+
+      Scenario: check event
