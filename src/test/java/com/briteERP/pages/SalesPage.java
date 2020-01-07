@@ -1,27 +1,41 @@
 package com.briteERP.pages;
 
+import com.briteERP.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class SalesPage {
+public class SalesPage extends BasePage{
 
     @FindBy(linkText = "Sales")
-    WebElement SalesPage;
+    public WebElement SalesPage;
+
+    @FindBy(xpath = "//li[.='Quotations']")
+    public  WebElement Quotations;
 
     @FindBy(xpath = "//a[@href=\"/web#menu_id=447&action=48\"]")
-    WebElement Customers;
+    public WebElement Customers;
 
-    @FindBy(css = "[class=\"btn btn-primary btn-sm o-kanban-button-new btn-default\"]")
-    WebElement Create;
+    @FindBy(xpath = "//button[@accesskey=\"c\"]")
+   public WebElement Create;
 
     @FindBy(css = "[class=\"o_form_sheet\"]")
-    WebElement Sheet;
+    public WebElement Sheet;
+
+    @FindBy(name = "name")
+    public WebElement name;
+
 
     @FindBy(css = "[class=\"btn btn-primary btn-sm o_form_button_save\"]")
-    WebElement Save;
+   public WebElement Save;
 
     @FindBy(partialLinkText = "Contact created")
-    WebElement message;
+    public WebElement message;
+
+    public void FillUp(){
+       Sheet.sendKeys();
+    }
+
+
 }
 
 
