@@ -32,7 +32,8 @@ public class LoginStepDefinitions {
     @Then("page title should be {string}")
     public void page_title_should_be(String string) {
         Assert.assertEquals(string, Driver.get().getTitle());
-        System.out.println("Hi Group 1");
+
+
 
     }
 
