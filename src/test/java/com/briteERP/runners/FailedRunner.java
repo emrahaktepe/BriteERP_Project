@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 
 @CucumberOptions (
 
-        features = "",
+        features = "@target/rerun.txt",
         glue = "com/briteERP/step_definitions",
         plugin = {"html:target/default-cucumber-reports",
 
