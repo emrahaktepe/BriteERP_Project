@@ -6,14 +6,25 @@ import com.briteERP.pages.SalesPage;
 import com.briteERP.utilities.BrowserUtils;
 import com.briteERP.utilities.ConfigurationReader;
 import com.briteERP.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class SalesStepDefinitions {
     LoginPage loginpage;
     SalesPage salesPage;
+
+   WebDriverWait wait = new WebDriverWait(Driver.get(),10);
 
 
     @Given("user is on the login page")
@@ -33,8 +44,6 @@ public class SalesStepDefinitions {
         salesPage = new SalesPage();
        salesPage.waitUntilLoaderMaskDisappear();
        salesPage.SalesPage.click();
-
-
     }
 
     @Then("user verifies that {string} page subtitle is displayed")
@@ -42,37 +51,51 @@ public class SalesStepDefinitions {
        salesPage.waitUntilLoaderMaskDisappear();
        String actual = salesPage.Quotations.getText();
        Assert.assertEquals(string,actual);
-
     }
 
     @Then("user click on {string} button")
     public void user_click_on_button(String string) {
+        salesPage.waitUntilLoaderMaskDisappear();
         salesPage.Customers.click();
+
+    }
+
+
+    @Then("user click on Create button to add new information as follow")
+    public void user_click_on_Create_button_to_add_new_information_as_follow(List<Map<String, String>> table) {
         salesPage.waitUntilLoaderMaskDisappear();
         salesPage.Create.click();
-        BrowserUtils.wait(5);
+        salesPage.waitUntilLoaderMaskDisappear();
+        salesPage.Name.sendKeys(table.get(0).get("Name"));
+        //salesPage.State.sendKeys(table.get(0).get("State"),Keys.ENTER);
+        salesPage.Street.sendKeys(table.get(0).get("Street"));
+        salesPage.City.sendKeys(table.get(0).get("City"));
+        //salesPage.Company.sendKeys(table.get(0).get("Company"),Keys.ENTER);
+        salesPage.ZIP.sendKeys(table.get(0).get("ZIP"));
+        //salesPage.Country.sendKeys(table.get(0).get("Country"),Keys.ENTER);
+        salesPage.TIN.sendKeys(table.get(0).get("TIN"));
+        //salesPage.Tags.sendKeys(table.get(0).get("Tags"),Keys.ENTER);
+        salesPage.Job_Position.sendKeys(table.get(0).get("Job_Position"));
+        salesPage.Phone.sendKeys(table.get(0).get("Phone"));
+        salesPage.Mobile.sendKeys(table.get(0).get("Mobile"));
+        salesPage.Email.sendKeys(table.get(0).get("Email"));
+        //salesPage.Website.sendKeys(table.get(0).get("Website"));
 
     }
 
-    @Then("user select {string} and {string}")
-    public void user_select_and(String string, String string2) {
-        salesPage.name.click();
-
-
-
+    @Then("user clicks on save button")
+    public void user_clicks_on_save_button() {
+        salesPage.Save.click();
 
     }
 
-    @Then("user adds new Customer information:")
-    public void user_adds_new_Customer_information(io.cucumber.datatable.DataTable dataTable) {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
-        // For other transformations you can register a DataTableType.
-        throw new cucumber.api.PendingException();
+    @Then("verify the added customer {string} is displayed at Customer page")
+    public void verify_the_added_customer_is_displayed_at_Customer_page(String string) {
+        salesPage.waitUntilLoaderMaskDisappear();
+        String actualCustomerName = salesPage.CustomerPage.getText();
+        String expectedCUstomerName = "JASMIN";
+
+        Assert.assertEquals(expectedCUstomerName,actualCustomerName);
     }
 
 }
