@@ -7,6 +7,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
+import static com.briteERP.utilities.BrowserUtils.waitForClickablility;
+
 public class LoginStepDefinitions {
     LoginPage loginPage;
 
@@ -32,9 +34,6 @@ public class LoginStepDefinitions {
     @Then("page title should be {string}")
     public void page_title_should_be(String string) {
         Assert.assertEquals(string, Driver.get().getTitle());
-
-
-
     }
 
 }
