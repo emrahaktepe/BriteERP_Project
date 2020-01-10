@@ -1,35 +1,24 @@
 package com.briteERP.step_definitions;
 
-import com.briteERP.pages.BasePage;
 import com.briteERP.pages.LoginPage;
 import com.briteERP.pages.SalesPage;
-import com.briteERP.utilities.BrowserUtils;
 import com.briteERP.utilities.ConfigurationReader;
 import com.briteERP.utilities.Driver;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class SalesStepDefinitions {
     LoginPage loginpage;
     SalesPage salesPage;
 
-   WebDriverWait wait = new WebDriverWait(Driver.get(),10);
 
 
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {
-
         Driver.get().get(ConfigurationReader.getProperty("url"));
     }
 
@@ -67,19 +56,22 @@ public class SalesStepDefinitions {
         salesPage.Create.click();
         salesPage.waitUntilLoaderMaskDisappear();
         salesPage.Name.sendKeys(table.get(0).get("Name"));
-        //salesPage.State.sendKeys(table.get(0).get("State"),Keys.ENTER);
+        salesPage.State.sendKeys(table.get(0).get("State"),Keys.ENTER);
         salesPage.Street.sendKeys(table.get(0).get("Street"));
         salesPage.City.sendKeys(table.get(0).get("City"));
-        //salesPage.Company.sendKeys(table.get(0).get("Company"),Keys.ENTER);
+        salesPage.Company.sendKeys(table.get(0).get("Company"),Keys.ENTER);
         salesPage.ZIP.sendKeys(table.get(0).get("ZIP"));
-        //salesPage.Country.sendKeys(table.get(0).get("Country"),Keys.ENTER);
+        salesPage.Country.sendKeys(table.get(0).get("Country"),Keys.ENTER);
         salesPage.TIN.sendKeys(table.get(0).get("TIN"));
-        //salesPage.Tags.sendKeys(table.get(0).get("Tags"),Keys.ENTER);
+        salesPage.Tags.sendKeys(table.get(0).get("Tags"),Keys.ENTER);
         salesPage.Job_Position.sendKeys(table.get(0).get("Job_Position"));
         salesPage.Phone.sendKeys(table.get(0).get("Phone"));
         salesPage.Mobile.sendKeys(table.get(0).get("Mobile"));
         salesPage.Email.sendKeys(table.get(0).get("Email"));
-        //salesPage.Website.sendKeys(table.get(0).get("Website"));
+        salesPage.Website.sendKeys(table.get(0).get("Website"),Keys.ENTER);
+        salesPage.Title.sendKeys(table.get(0).get("Title"),Keys.ENTER);
+        //salesPage.Language.sendKeys(table.get(0).get("Language"),Keys.ENTER);
+
 
     }
 
