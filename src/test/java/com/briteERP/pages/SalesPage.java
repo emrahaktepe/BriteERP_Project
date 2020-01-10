@@ -31,22 +31,25 @@ public class SalesPage extends BasePage{
     @FindBy(css = "[name = 'city']")
     public WebElement City;
 
-    @FindBy(css = "[className =o_input ui-autocomplete-input']")
+    @FindBy(xpath = "//div[@name=\"parent_id\"]//input")
     public WebElement Company;
 
-    @FindBy(css = "[id=\"o_field_input_40\"]")
+    @FindBy(xpath = "//div[@name=\"state_id\"]//input")
     public WebElement State;
+
+    @FindBy(xpath = "(//input[@class=\"o_input ui-autocomplete-input\"])[2]")
+    public WebElement SlectState;
 
     @FindBy(css = "[class=\"o_field_char o_field_widget o_input o_address_zip\"]")
     public WebElement ZIP;
 
-    @FindBy(css = "[id=\"o_field_input_40\"]")
+    @FindBy(xpath = "//div[@name='country_id']//input")
     public WebElement Country;
 
     @FindBy(css = "[name='vat']")
     public  WebElement TIN;
 
-    @FindBy(css = "[id=\"o_field_input_6799\"]")
+    @FindBy(xpath = "//div[@name=\"category_id\"]//input")
     public WebElement Tags;
 
     @FindBy(css = "[name=\"function\"]")
@@ -61,8 +64,14 @@ public class SalesPage extends BasePage{
     @FindBy(css = "[name=\"email\"]")
     public WebElement Email;
 
-    @FindBy(css = "[id=\"o_field_input_6805\"]")
+    @FindBy(xpath = "(//td[@style=\"width: 100%;\"]//input)[13]")
     public WebElement Website;
+
+    @FindBy(xpath = "//div[@name=\"title\"]//input")
+    public  WebElement Title;
+
+    @FindBy(xpath = "(//select[@class=\"o_input o_field_widget\"]//option)[2]")
+    public WebElement Language;
 
     @FindBy(css = "[class=\"btn btn-primary btn-sm o_form_button_save\"]")
     public  WebElement Save;
@@ -70,16 +79,8 @@ public class SalesPage extends BasePage{
     @FindBy(css = "[class='o_field_char o_field_widget o_required_modifier']")
     public WebElement CustomerPage;
 
-    @FindBy()
-    public WebElement CompanyList;
 
 
-//    @FindBy(partialLinkText = "Contact created")
-//    public WebElement message;
-//
-//    public void FillUp(){
-//       Sheet.sendKeys();
-//    }
 
 
 }
