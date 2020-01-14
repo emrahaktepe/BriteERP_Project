@@ -5,21 +5,19 @@
 
 
     Background: open login page and login
-      Given user is on the login page
-      Then user logs in
-
-    Scenario: Verify Notes page
-      Given user is on the Discuss page
+      Given user is on main page
+      Then user clicks on sign in button
+      Then user enters valid username and password and login
+      Then page title should be "Odoo"
       Then user navigates to "Notes"
-      And user verifies that "Notes" page subtitle is displayed
+      And page title should be displayed as "Notes - Odoo"
 
     Scenario: Create a new note
-      And user clicks "Create" button
-      Then user enters "test note" to the text box then click "Save" button
-      And user verifies that "Note created" message is displayed
+      And user clicks create button
+      Then user enters "test note" to the text box then click save button
+      And user verifies that new note is created
 
     Scenario: Delete a note
-      Then user navigates to "Action" then to "Delete"
-      And user clicks "Ok" button to confirm
-      Then user navigates to "Notes" page
-      And user verifies that the "test note" is not displayed
+      Then user clicks notes drop down clicks then to delete
+      And user clicks ok button to confirm
+      Then user verifies that the note is not displayed
