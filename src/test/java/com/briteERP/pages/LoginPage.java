@@ -16,6 +16,12 @@ public class LoginPage extends BasePage {
     @FindBy(css = "[class='alert alert-danger']")
     public WebElement errorMessageWrongcredential;
 
+    public static void login(String string) {
+    }
+
+    public static void waitUntilLoadingCompleted() {
+    }
+
     public void logInMethod() {
         signInButton.click();
         usernameInput.sendKeys(ConfigurationReader.getProperty("user_name"));
