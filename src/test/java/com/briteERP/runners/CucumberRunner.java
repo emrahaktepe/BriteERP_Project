@@ -9,12 +9,13 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/briteERP/step_definitions",
         dryRun = false,
-        tags = ,
+        tags = " @Login",
         plugin = {"html:target/default-cucumber-reports",
-                "json:target/cucumber.json",
-                "rerun:target/rerun.txt"}
-)
+                "json:target/cucumber.json"
+        }
 
+)
 public class CucumberRunner {
+
 
 }
