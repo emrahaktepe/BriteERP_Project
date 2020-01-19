@@ -179,5 +179,17 @@ public class BrowserUtils {
         return listOfStrings;
     }
 
+    /**
+     * These two methods will manage dropdown menus with Select
+     */
+    public static void selectFromDropdown(WebElement element, String key) {
+        Select select = new Select(element);
+        select.selectByVisibleText(key);
+    }
+
+    public static void selectFromDropdown(WebElement element, int number) {
+        Select select = new Select(element);
+        select.selectByIndex(number);
+    }
 
 }
