@@ -70,7 +70,7 @@ public class SalesStepDefinitions {
         salesPage.Email.sendKeys(table.get(0).get("Email"));
         salesPage.Website.sendKeys(table.get(0).get("Website"),Keys.ENTER);
         salesPage.Title.sendKeys(table.get(0).get("Title"),Keys.ENTER);
-        //salesPage.Language.sendKeys(table.get(0).get("Language"),Keys.ENTER);
+        salesPage.Language.sendKeys(table.get(0).get("Language"),Keys.ENTER);
 
 
     }
