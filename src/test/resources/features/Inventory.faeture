@@ -1,0 +1,27 @@
+@Inventory
+     Feature: As a user I should be able to create product under
+    the inventor  module
+
+
+
+
+      Background: open login page and login
+                  Given user is on main page
+                  Then user clicks on sign in button
+                  Then user enters valid username and password and login
+                  Then page title should be "Odoo"
+                  Then user navigates to "Inventory" then click
+
+
+     Scenario: Create product
+        Then user click on "Create" button
+        Then user adds new product information:
+
+        Scenario: check product
+
+
+
+
+
+
+
